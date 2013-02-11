@@ -6,6 +6,7 @@ class Article < ActiveRecord::Base
 	attr_accessible :tag_list
 	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
 	attr_accessible :image
+	belongs_to :author
 	
 	def tag_list
 		self.tags.collect do |tag|

@@ -13,3 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$( document ).ready(function($) {
+  $("#submit").click(function( event ) {
+    
+    event.preventDefault();
+
+  		$.ajax({
+  		type: "POST",
+  		url: "",
+  		data: $('textarea#comment_body').val(),
+  		success:function(){
+  		alert("You made a comment")
+  		},
+  		error:function(e){
+  			console.log(e);
+  		alert("There are errors on the page")
+  		}
+	});
+
+  });
+});
+

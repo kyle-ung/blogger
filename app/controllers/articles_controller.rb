@@ -16,7 +16,9 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
+		@author_id = params[:article].delete(:author_id)
 		@article = Article.new(params[:article])
+		@article.author_id = @author_id
 		@article.save
 		redirect_to article_path(@article)
 	end
